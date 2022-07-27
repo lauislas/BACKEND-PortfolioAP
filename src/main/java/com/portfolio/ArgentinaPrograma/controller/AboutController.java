@@ -22,23 +22,23 @@ public class AboutController {
     @Autowired
     private IAboutService aboutServ;
 
-    @GetMapping("/about/info")
+    @GetMapping("about/info")
     @ResponseBody
     public List<About> get() {
         return aboutServ.getAbout();
     }
   
-    @PostMapping("/about/new")
+    @PostMapping("about/new")
        public void add(@RequestBody About about) {
         aboutServ.addAbout(about); 
     }
     
-    @PutMapping("/about/update")
+    @PutMapping("about/update")
     public void update(@RequestBody About about) {
         aboutServ.updateAbout(about);
     }
     
-    @DeleteMapping("/about/delete/{id}")
+    @DeleteMapping("about/delete/{id}")
     public void delete(@PathVariable Long id) {
         aboutServ.deleteAbout(id);
     }
